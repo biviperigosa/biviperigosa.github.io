@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+*{
+    color: white;
+    font-family: sans-serif;
+    border: 0;
+    padding: 0;
+}
+body,html{
+    background-color: #1c1c1c;
+}
+.banner{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 10%;
+}
+.banner h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;   
+}
+.banner .my{
+    color: rgb(98, 10, 197);
+}
+.banner .forever{
+    color: rgb(201, 201, 0);
+}
+
+.banner p{
+    color: red;
+    font-size: 30px;
+}
+.images{
+    display:inline-block;
+    margin-left: 40%;
+    padding-top:5%;
+}
+.images img{
+    border-radius: 1000px;
+    position: relative;
+}
+.florzinha, .olharsanguinario, .olhinhofechado{
+    max-width: 270px;
+    margin-top: 20px;
+}
+.major, .beijolindo, .copa{
+    max-width: 335px;
+}
+
+.tempo{
+    margin-top: 10%;
+}
+.tempo h1{
+    margin-top: 10%;
+    margin-left:13%;
+    position: absolute;
+    font-family: "DM Sans", sans-serif;
+}
+
+.scene {
+    height: 500px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40%;
+    
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 10%;
+}
+
+.timeline ul li {
+    margin-bottom: 50px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.point {
+    min-width: 20px;
+    height: 20px;
+    background-color: #480890;
+    border-radius: 100%;
+    z-index: 2;
+    border: 3px #333333 solid;
+    position: relative;
+    left: 1px;
+}
+
+@media (max-width: 800px) {
+    .point {
+        min-width: 15px;
+        height: 15px;
+    }
+
+    html, body {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 650px) {
+    html, body {
+        font-size: 14px;
+    }
+    
+    .point {
+        min-width: 12px;
+        height: 12px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    html, body {
+        font-size: 10px;
+    }
+
+    p {
+        padding: 10px !important;
+    }
+}
+
+.timeline ul li .content {
+    width: 50%;
+    padding: 0 20px;
+}
+
+.timeline ul li:nth-child(odd) .content {
+    padding-left: 0;
+}
+
+.timeline ul li:nth-child(odd) .date {
+    padding-right: 0;
+}
+
+.timeline ul li:nth-child(even) .content {
+    padding-right: 0;
+}
+
+.timeline ul li:nth-child(even) .date {
+    padding-left: 0;
+}
+
+.timeline ul li .date {
+    width: 50%;
+    padding: 0 20px;
+    font-weight: normal;
+}
+
+.timeline ul li .date h4 {
+    background-color: #8b0d0d;
+    width: 100px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.timeline ul li .content h3 {
+    padding: 10px 20px;
+    background-color: #480890;
+    margin-bottom: 0;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.timeline ul li .content p {
+    padding: 10px 20px;
+    background-color: #000000;
+    margin-top: 0;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.timeline ul li:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline ul li:nth-child(even) .date h4 {
+    float: right
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    left: 50%;
+    background-color: #333333;
+}
+
+.cards img{
+    max-width: 100%;
+    margin-left: 15%;
+}
+.video{
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 10%;
+}
+video{
+    width: 400px;
+}
+input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.cards{
+    margin-bottom: 10%;
+    margin-top: 10%;
+  --img-w: 200px;
+  --duration: 300ms;
+  --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: min(100% - 4rem, 800px);
+  margin-inline: auto;
+  display: grid;
+  
+  counter-reset: my-counter;
+}
+
+.card{
+  --cards-grid-cols: auto;
+  --cards-grid-rows: var(--img-w) auto;
+  --cards-grid-gap: 2rem;
+  --cards-footer-justify: center;
+  
+  grid-area: 1/1;
+  display: grid;
+ place-items: center; 
+  grid-template-columns: var(--cards-grid-cols);
+  grid-template-rows: var(--cards-grid-rows);
+  gap: var(--cards-grid-gap);
+  
+}
+
+@media (600px < width){
+  .card{
+      --cards-grid-cols: var(--img-w) auto;
+      --cards-grid-rows: auto;
+      --cards-grid-gap: 4rem;
+      --cards-footer-justify: start;
+  }
+}
+
+
+.card-img{
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1 / 1 ;
+  rotate: var(--angle, 0deg);
+  border-radius: 10px;
+  border: 3px solid #FFF;
+  overflow: hidden;
+  transform-origin: center;
+  object-fit: cover;
+  box-shadow: 0 0 5px 3px rgba(0 0 0 / .05);
+}
+
+
+
+input:nth-of-type(1):checked + .card ~ .card > .card-img{
+  animation: straighten-img-1 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(2):checked) > .card-img,
+input:nth-of-type(2):checked + .card ~ .card > .card-img{
+  animation: straighten-img-2 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(3):checked) > .card-img,
+input:nth-of-type(3):checked + .card ~ .card > .card-img{
+  animation: straighten-img-3 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(4):checked) > .card-img,
+input:nth-of-type(4):checked + .card ~ .card > .card-img{
+  animation: straighten-img-4 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(5):checked) > .card-img,
+input:nth-of-type(5):checked + .card ~ .card > .card-img{
+  animation: straighten-img-5 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(6):checked) > .card-img,
+input:nth-of-type(6):checked + .card ~ .card > .card-img{
+  animation: straighten-img-6 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(7):checked) > .card-img,
+input:nth-of-type(7):checked + .card ~ .card > .card-img{
+  animation: straighten-img-7 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+/* as CSS can't remove animations, we change the animation according to which checkbox is checked  - all animations are the same (would be simpler with SCSS) */
+@keyframes straighten-img-1 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-2 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-3 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-4 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-5 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-6 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-7 { 50%{ --angle: 0deg;} }
+
+
+/* stacking order - these are updated according to which card is selected */
+.card{
+  z-index: -1;
+}
+input:checked + .card{
+  z-index:10 !important;
+}
+/* next card checked - place behind */
+.card:has(+input:checked){
+  z-index:9;
+}
+/* next card +1 checked - place behind */
+.card:has(+input + .card + input:checked){
+  z-index:8;
+}
+/* next card +2 checked - place behind */
+.card:has(+input + .card +input + .card + input:checked){
+  z-index:7;
+}
+/* next card +3 checked - place behind */
+.card:has(+input + .card +input + .card +input + .card + input:checked){
+  z-index:6;
+}
+/* next card +4 checked - place behind */
+.card:has(+input + .card +input + .card +input + .card +input + .card + input:checked){
+  z-index:5;
+}
+/* next card +5 checked - place behind */
+.card:has(+input + .card +input + .card +input +input + .card +input + .card +input + .card + input:checked){
+  z-index:4;
+}
+/* next card +6 checked - place behind */
+.card:has(+input + .card +input + .card +input  + .card +input +input + .card +input + .card +input + .card + input:checked){
+  z-index:3;
+}
+
+.card-data{
+  display: grid;
+  gap: 1rem;
+}
+.card-data > .card-num{
+  opacity: var(--data-opacity, 0);
+  font-size: .8rem;
+  color: #666;
+}
+.card-data > p{
+  font-size: 0.9rem;
+
+}
+.card-data > h2,
+.card-data > p{
+  transition: var(--duration) ease-in-out;
+  transition-delay: var(--data-delay,0ms);
+  opacity: var(--data-opacity, 0);
+  translate: 0 var(--data-y, 20px);
+}
+.card-data > footer{
+  display: flex;
+  justify-content: var(--cards-footer-justify);
+  gap: 2rem;
+}
+.card-data > footer label{
+  margin-block-start: auto;
+  cursor: pointer;
+  pointer-events: var(--card-events, none);
+  opacity: var(--data-opacity, 0);
+  transition: color var(--duration) ease-in-out;
+  color: var(--label-clr-txt,#000);
+  background-color:var(--label-clr-bg,#EEE);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+  transition: background-color 300ms ease-in-out,color  300ms ease-in-out;
+}
+
+
+input:checked:focus-visible + .card > .card-data > footer label,
+.card-data > footer label:hover{
+  --label-clr-txt: #FFF;
+  --label-clr-bg: steelblue;
+}
+
+input:checked + .card{
+  --data-opacity: 1;
+  --data-y: 0;
+  --data-delay: var(--duration);
+  --card-events: auto;
+  transition: z-index;
+  transition-delay: 300ms;
+  /*z-index: 1;*/
+}
+
+input:checked +.card > .card-img{
+  animation: reveal-img calc(var(--duration) * 2) forwards;
+}
+
+@keyframes reveal-img{
+  50%{
+    translate: -150% 0;
+    --angle: 0deg;
+  }
+}
+.conteudo2 img{
+    width: 250px;
+    border-radius: 100px;
+    position: absolute;
+}
+.fan{
+    margin-top: 10%;
+    height: 100vh;
+}
+.fan img{
+    margin-left: 70%;
+}
+.fan h2,h3{
+    margin-left: 10%;
+}
+.fan h2{
+    padding-top: 10%;
+}
+.fan h1{
+    text-align: center;
+    margin-top: 20%;
+    font-size: 25px;
+}
